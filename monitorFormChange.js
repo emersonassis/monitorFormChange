@@ -182,6 +182,14 @@
 
   }
   
+  function submitMonitorForm(){
+      if(shaChanged()){
+        showAlertMessage();
+      }else{
+        submit();
+      }
+  }
+
   function submit(){
     if(!monitorFormChange.isInit())
       return
