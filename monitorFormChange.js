@@ -66,6 +66,9 @@
   
   async function buildSha(){
 
+    if(!monitorFormChange.isInit())
+      return
+
     let form = globalElementForm;
     let elements = form.elements
     
@@ -143,6 +146,9 @@
   }
   
   function shaChanged(){
+    if (!monitorFormChange.isInit())
+      return
+
     let shaOrigin = globalElementForm.getAttribute('origin-data-sha');
     let shaNew = globalElementForm.getAttribute('new-data-sha');
   
@@ -154,6 +160,9 @@
   }
   
   function buildInputHidden(){
+    if (!monitorFormChange.isInit())
+      return
+
     removeInputHiddenChangeForm();
     let elementInputHiddenChangeForm = `<input id='_monitorformchange' type='hidden' name='_monitorformchange[form_change]' monitor-ignore-field='true' value='true' />`;
     globalElementForm.insertAdjacentHTML('afterbegin', elementInputHiddenChangeForm);
@@ -177,6 +186,9 @@
   }
   
   function submit(){
+    if(!monitorFormChange.isInit())
+      return
+
     globalElementForm.submit();
   }
 
