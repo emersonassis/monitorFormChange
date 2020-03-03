@@ -135,14 +135,7 @@
     if (!showAlertOnSubmit){
       return
     }
-    
-    globalElementForm.onsubmit = function(event) {
-      if(shaChanged()){
-        event.preventDefault();
-        showAlertMessage();
-        buildInputHidden();
-      }
-    };
+
   }
   
   function shaChanged(){
