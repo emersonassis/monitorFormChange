@@ -180,9 +180,13 @@
   }
 
   function _getConfirmation(){
+      buildInputHidden();
       let _confirm = confirm(monitorFormChange.messageAlert);
       if(_confirm)
         submit();
+      else
+        removeInputHiddenChangeForm()
+
   }
   
   function submit(){
