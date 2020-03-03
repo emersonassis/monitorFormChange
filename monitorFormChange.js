@@ -7,11 +7,17 @@
 
   let globalElementForm = null;
 
+  var started = false
+  
   monitorFormChange.formId = "";
   monitorFormChange.messageAlert = "The form was changed. Are you sure you want to continue?";
   monitorFormChange.showAlertOnSubmit = true;
   monitorFormChange.callbackConfirmation = _getConfirmation;
   monitorFormChange.ignoreFields = [];
+  monitorFormChange.submitForm = submitMonitorForm;
+  monitorFormChange.isInit = isInit
+  monitorFormChange.start = start
+  monitorFormChange.destroy = destroy
 
   function monitorFormChange(config) {
     initConfig(config);
@@ -32,13 +38,23 @@
 
   function initMonitorFormChange(){
     globalElementForm = document.getElementById(monitorFormChange.formId)
-
-    if(globalElementForm == undefined)
-      return
-
+    monitorFormChange.started = true;
+    
     buildSha();
     addOnChange();
     setShowMessageOnSubmit();
+  }
+
+  function start(){
+    monitorFormChange.started = true;
+  }
+
+  function destroy(){
+    monitorFormChange.started = false;
+  }
+
+  function isInit(){
+    return monitorFormChange.started
   }
   
   function addOnChange(){
