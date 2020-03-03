@@ -1,4 +1,3 @@
-
 ;(function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
       typeof define === 'function' && define.amd ? define(factory) :
@@ -94,10 +93,8 @@
       if(ignoreField(element)){
         continue
       }
-
       listValuesInpus.push(getValueField(element));
     }
-
     return listValuesInpus;
 
   }
