@@ -23,7 +23,7 @@ callbackConfirmation: You can add a callback function to show the message confir
   > By default: `confirm();`
 
 ignoreFields: All fields on the form are monitoring, but if you want to ignore one or more fields, you must include the attribute id, of field, in the list;
-  > By defaul: `[]`
+  > By default: `[]`
 
 submitForm: When the form is submit, the monitorFormChange verify if any field value was change, and show message for user. Note: The message just is showed if the config `showAlertOnSubmit` is `true`;
 
